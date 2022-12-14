@@ -1,6 +1,6 @@
 package org.example.bot.statemachine;
+import org.example.bot.service.ServiceManager;
 
-import com.google.common.util.concurrent.ServiceManager;
 import org.example.bot.service.SharedService;
 
 import org.slf4j.Logger;
@@ -31,6 +31,7 @@ public class ChatRouter {
 
         logger.info(String.format("ROUTE: %d %s", chatId, transmittedData.getState()));
 
+        return serviceManager.processUpdate(textData, transmittedData);
     }
 
 }
