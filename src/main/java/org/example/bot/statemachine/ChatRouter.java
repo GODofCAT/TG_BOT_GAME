@@ -1,7 +1,8 @@
 package org.example.bot.statemachine;
 
 import com.google.common.util.concurrent.ServiceManager;
-import org.example.bot.TransmittedData;
+import org.example.bot.service.SharedService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

@@ -2,25 +2,25 @@ package org.example.bot.statemachine;
 
 public class TransmittedData {
 
-    private org.example.bot.statemachine.State state;
-    private final org.example.bot.statemachine.DataStorage dataStorage;
+    private State state;
+    private final DataStorage dataStorage;
     private final long chatId;
 
     public TransmittedData(long chatId) {
         this.chatId = chatId;
-        state = org.example.bot.statemachine.State.CommandStart;
-        dataStorage = new org.example.bot.statemachine.DataStorage();
+        state = State.CommandStart;
+        dataStorage = new DataStorage();
     }
 
-    public void setState(org.example.bot.statemachine.State state) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    public org.example.bot.statemachine.State getState() {
+    public State getState() {
         return state;
     }
 
-    public org.example.bot.statemachine.DataStorage getDataStorage() {
+    public DataStorage getDataStorage() {
         return dataStorage;
     }
 
