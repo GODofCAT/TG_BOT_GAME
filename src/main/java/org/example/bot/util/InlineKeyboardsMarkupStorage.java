@@ -20,6 +20,34 @@ public class InlineKeyboardsMarkupStorage {
         row.add(button);
         keyboard.add(row);
 
+        //row = new ArrayList<>();
+        //button = new InlineKeyboardButton();
+        //button.setText(ButtonsStorage.ButtonAttack.getName());
+        //button.setCallbackData(ButtonsStorage.ButtonAttack.getCallBackData());
+        //row.add(button);
+        //keyboard.add(row);
+
+        //row = new ArrayList<>();
+        //button = new InlineKeyboardButton();
+        //button.setText(ButtonsStorage.ButtonDefense.getName());
+        //button.setCallbackData(ButtonsStorage.ButtonDefense.getCallBackData());
+        //row.add(button);
+        //keyboard.add(row);
+
+        InlineKeyboardMarkup replyKeyboardMarkup = new InlineKeyboardMarkup();
+        replyKeyboardMarkup.setKeyboard(keyboard);
+
+
+
+        return replyKeyboardMarkup;
+    }
+
+    public static InlineKeyboardMarkup getStart() {
+        List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+
+        List<InlineKeyboardButton> row;
+        InlineKeyboardButton button;
+
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText(ButtonsStorage.ButtonAttack.getName());

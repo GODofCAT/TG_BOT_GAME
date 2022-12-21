@@ -18,9 +18,9 @@ public class ServiceManager {
         mainMenuService = new MainMenuService();
 
         methods.put(State.CommandStart, mainMenuService::processCommandStart);
-        methods.put(State.ClickInMenuMain, mainMenuService::processClickInMenuMain);
-        methods.put(State.ClickAttack, mainMenuService::processClickInMenuMain);
-        methods.put(State.ClickDefense, mainMenuService::processClickInMenuMain);
+        methods.put(State.ClickInMenuMain, mainMenuService::processClickInGame);
+        methods.put(State.ClickAttack, mainMenuService::processClickInGame);
+        methods.put(State.ClickDefense, mainMenuService::processClickInGame);
 
 
     }

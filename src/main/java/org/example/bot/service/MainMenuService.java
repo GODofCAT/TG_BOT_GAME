@@ -22,7 +22,7 @@ public class MainMenuService {
         return SharedService.goToProcessClickInMenuMain(transmittedData);
     }
 
-    public SendMessage processClickInMenuMain(String callBackData, TransmittedData transmittedData) throws Exception {
+    public SendMessage processClickInGame(String callBackData, TransmittedData transmittedData) throws Exception {
         SendMessage message = new SendMessage();
         message.setChatId(transmittedData.getChatId());
 

@@ -1,11 +1,21 @@
 package org.example.bot;
 
+import org.example.bot.service.UpdateHandlerMultiThread;
+import org.example.bot.statemachine.ChatRouter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class BotInitializer extends TelegramLongPollingBot {
+
+    private static final Logger logger = LoggerFactory.getLogger(BotInitializer.class);
+
+    private final ChatRouter chatRouter;
+
+    public BotInitializer() throws Exception {
+        chatRouter = new ChatRouter();
+    }
 
     @Override
     public String getBotUsername() {
@@ -23,5 +33,7 @@ public class BotInitializer extends TelegramLongPollingBot {
         int messageId = 0;
         String textData = "";
         String updateType = "";
+        UpdateHandlerMultiThread updateHandlerMultiThread = new UpdateHandlerMultiThread(chatRouter, update, this);
+        updateHandlerMultiThread.start();
     }
 }
