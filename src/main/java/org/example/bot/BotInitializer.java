@@ -29,10 +29,6 @@ public class BotInitializer extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        long chatId = 0;
-        int messageId = 0;
-        String textData = "";
-        String updateType = "";
         UpdateHandlerMultiThread updateHandlerMultiThread = new UpdateHandlerMultiThread(chatRouter, update, this);
         updateHandlerMultiThread.start();
     }

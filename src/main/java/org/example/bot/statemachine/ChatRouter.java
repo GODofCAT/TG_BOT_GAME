@@ -24,10 +24,10 @@ public class ChatRouter {
 
     public SendMessage route(long chatId, String textData) throws Exception {
         if (!chats.containsKey(chatId)) {
-            chats.put(chatId, new org.example.bot.statemachine.TransmittedData(chatId));
+            chats.put(chatId, new TransmittedData(chatId));
         }
 
-        org.example.bot.statemachine.TransmittedData transmittedData = chats.get(chatId);
+        TransmittedData transmittedData = chats.get(chatId);
 
         logger.info(String.format("ROUTE: %d %s", chatId, transmittedData.getState()));
 

@@ -18,11 +18,10 @@ public class ServiceManager {
         mainMenuService = new MainMenuService();
 
         methods.put(State.CommandStart, mainMenuService::processCommandStart);
+        methods.put(State.ClickOnButtonStart, mainMenuService::processClickOnButtonStart);
         methods.put(State.ClickInMenuMain, mainMenuService::processClickInGame);
-        methods.put(State.ClickAttack, mainMenuService::processClickInGame);
-        methods.put(State.ClickDefense, mainMenuService::processClickInGame);
-
-
+//        methods.put(State.ClickAttack, mainMenuService::processClickInGame);
+//        methods.put(State.ClickDefense, mainMenuService::processClickInGame);
     }
 
     public SendMessage processUpdate(String textData, TransmittedData transmittedData) throws Exception {
